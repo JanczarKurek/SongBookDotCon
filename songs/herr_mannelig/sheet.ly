@@ -22,7 +22,7 @@
     Om i | vil -- jen el -- ler ej
   }
 >>
-\markup {
+%{\markup {
   \fill-line {
     \hspace #1
     \column {
@@ -71,3 +71,4 @@
     \hspace #1
   }
 }
+%}

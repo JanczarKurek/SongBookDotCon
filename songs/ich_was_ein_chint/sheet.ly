@@ -19,7 +19,7 @@
     ma -- le -- di -- can -- tur | thy -- li -- e | iux -- ta vi -- am | po -- si -- te
   }
 >>
-\markup {
+%{\markup {
   \fill-line {
     \hspace #1
     \column {
@@ -81,4 +81,4 @@
     }
     \hspace #1
   }
-}
+}%}

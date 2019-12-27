@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% LaTeX book template                           %%
+
+%% Author:  Amber Jain (http://amberj.devio.us/) %%
+
+%% License: ISC license                          %%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[a4paper,12pt]{book}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{}{0pt}{\Huge\bfseries}
+\newcommand\invisiblesection[1]{%
+
+	\refstepcounter{section}%
+
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+
+	\sectionmark{#1}}
+
+
+\title{Śpiewnik ...kon}
+\author{Anonim}
+
+\begin{document}
+	\frontmatter
+	\maketitle
+	
+	\tableofcontents
+
+	
+	\mainmatter
+	
+	\chapter{Rodzaj piosenek}

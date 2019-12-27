@@ -1,20 +1,19 @@
 LILY=lilypond
 
-SRCROOT=songs
-SRCDIRS=$(shell find $(SRCROOT)/* -type d)
-SRCFILES=$(shell find $(SRCROOT)/* -type f)
-BUILDROOT=build
-BUILDDIRS=$(SRCDIRS:$(SRCROOT)/%=$(BUILDROOT)/%)
-BUILDFILES=$(SRCFILES:$(SRCROOT)/%.ly=$(BUILDROOT)/%.pdf)
+SRCROOT=./songs
 
-all: buildtree $(BUILDFILES)
+all: result/result.pdf
 
-$(BUILDROOT)/%.pdf: $(SRCROOT)/%.ly
-	$(LILY) -o $@ $<
-	mv $@.pdf $@
+result/result.pdf: build/result.tex
+	cd build; pdflatex -interaction=nonstopmode result.tex
+	mkdir -p result
+	cp build/result.pdf result/result.pdf
 
-buildtree:
-	mkdir -p $(BUILDDIRS)
+build/result.tex: result.lytex
+	lilypond-book result.lytex --output build
+
+result.lytex:
+	./book_builder.sh
 
 clean:
-	rm -rf $(BUILDROOT) 
+	rm -rf result.lytex build/ result/
